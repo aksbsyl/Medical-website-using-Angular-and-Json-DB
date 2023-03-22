@@ -1,0 +1,12 @@
+{
+  "posts": [
+    {
+      "id": 2,
+      "firstName": "Bek",
+      "lastName": "Bashyal",
+      "email": "aks@gmai.com",
+      "mobile": "9847434343",
+      "testResults": "Negative"
+    }
+  ]
+}

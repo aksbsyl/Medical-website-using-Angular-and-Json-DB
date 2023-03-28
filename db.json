@@ -4,9 +4,44 @@
       "id": 2,
       "firstName": "Bek",
       "lastName": "Bashyal",
-      "email": "aks@gmai.com",
+      "email": "aks@gmail.com",
       "mobile": "9847434343",
       "testResults": "Negative"
+    },
+    {
+      "id": 3,
+      "firstName": "Sangoro",
+      "lastName": "Blackfoot",
+      "email": "blackfoot@gmail.com",
+      "mobile": "0303030303",
+      "testResults": "Negative"
+    },
+    {
+      "id": 4,
+      "firstName": "Rebecca",
+      "lastName": "Daughty",
+      "email": "reb@gmail.com",
+      "mobile": "6034448588",
+      "testResults": "Negative"
     }
-  ]
+  ],
+  "signupUsers": [
+    {
+      "fullname": "Aakash Bashyal",
+      "email": "ab@gmail.com",
+      "password": "ghost123",
+      "mobile": "603306666",
+      "id": 1
+    },
+    {
+      "fullname": "Dawn Letto",
+      "email": "dawn@gmail.com",
+      "password": "dawn123",
+      "mobile": "6036036036",
+      "id": 2
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
 }

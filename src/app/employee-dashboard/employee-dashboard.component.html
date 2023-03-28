@@ -1,101 +1,93 @@
-<nav class="navbar navbar-light bg-primary">
-    <div class="container-fluid">
-        <h1 style="color:aliceblue">Health Application</h1>
-        <div class="d-flex">
-            <button type="button" (click)= "clickAddUser()"class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">Add User</button>
-        </div>
-    </div>
-</nav>
-<table class="table">
-    <thead>
-        <tr>
-            <th scope="col">User ID</th>
-            <th scope="col">First Name</th>
-            <th scope="col">Last Name</th>
-            <th scope="col">Email ID</th>
-            <th scope="col">Mobile Number</th>
-            <th scope="col">Test Results</th>
-            <th scope="col">Action</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let row of userData">
-            <!-- <td>1001</td>
-            <td>Ram</td>
-            <td>Kumar</td>
-            <td>ram.kumar@gmail.com</td>
-            <td>1234567890</td>
-            <td>Covid Negative</td> -->
-            <td>{{row.id}}</td>
-            <td>{{row.firstName}}</td>
-            <td>{{row.lastName}}</td>
-            <td>{{row.email}}</td>
-            <td>{{row.mobile}}</td>
-            <td>{{row.testResults}}</td>
-            <td>
-            <button type="button" (click)="onEdit(row)" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#exampleModal">Edit</button>
-            <button (click)="deleteTheUser(row)" class="btn btn-danger mx-3">Delete</button>
-            </td>
-        </tr>
-    </tbody>
-</table>
-<!-- Button trigger modal -->
-  
-  <!-- Modal -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h1 class="modal-title fs-5" id="exampleModalLabel">Add User</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
 
-          <form [formGroup]="formValue">
-            <!-- <div class="mb-3">
-              <label for="exampleInputEmail1" class="form-label">User ID</label>
-              <input type="number" formControlName="id" class="form-control" id="exampleInputEmail1">
-            </div> -->
-            <div class="mb-3">
-              <label for="exampleInputEmail1" class="form-label">First Name</label>
-              <input type="text" formControlName="firstName" class="form-control" id="exampleInputEmail1">
-            </div>
-            <div class="mb-3">
-              <label for="exampleInputEmail1" class="form-label">Last Name</label>
-              <input type="text" formControlName="lastName" class="form-control" id="exampleInputEmail1">
-            </div>
-            <div class="mb-3">
-              <label for="exampleInputEmail1" class="form-label">Email address</label>
-              <input type="email" formControlName="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-              <!-- <div id="emailHelp" formControlName="emailId" class="form-control">We'll never share your email with anyone else.</div> -->
-            </div>
-            <div class="mb-3">
-              <label for="exampleInputEmail1" class="form-label">Mobile Number</label>
-              <input type="text" formControlName="mobile" class="form-control" id="exampleInputEmail1">
-            </div>
-            <div class="mb-3">
-              <label for="exampleInputEmail1" class="form-label">Test Results</label>
-              <input type="text" formControlName="testResults" class="form-control" id="exampleInputEmail1">
-            </div>
+<app-header></app-header>
+<section class="hero-home bg-cover bg-center" style="background: url(assets/images/form-background.jpeg)">
+  <div class="container index-forward py-5 mb-5">
+    <div class="row text-white">
+      <div class="col-md">
+       <nav class="navbar ">
+          <div class="container-fluid">
+              <h1 class="text-uppercase mb-0 text-shadow">Health Application</h1>
+              <div class="d-flex">
+                  <button type="button" (click)= "clickAddUser()"class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">Add User</button>
 
-            <!-- <div class="mb-3">
-              <label for="exampleInputPassword1" class="form-label">Password</label>
-              <input type="password" class="form-control" id="exampleInputPassword1">
-            </div> 
-             <div class="mb-3 form-check">
-              <input type="checkbox" class="form-check-input" id="exampleCheck1">
-              <label class="form-check-label" for="exampleCheck1">Check me out</label>
-            </div>
-            <button type="submit" class="btn btn-primary">Submit</button> -->
-
-          </form>
-        </div>
-        <div class="modal-footer">
-          <button type="button" id="cancel" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" *ngIf="showAdd" (click)="postUserDetails()" class="btn btn-primary">Add</button>
-          <button type="button" *ngIf="showUpdate" (click)="updateUser()" class="btn btn-primary">Update</button>
-        </div>
+              </div>
+          </div>
+      </nav>
+      <table class="table text-white">
+          <thead>
+              <tr>
+                  <th class="text"scope="col">User ID</th>
+                  <th scope="col">First Name</th>
+                  <th scope="col">Last Name</th>
+                  <th scope="col">Email ID</th>
+                  <th scope="col">Mobile Number</th>
+                  <th scope="col">Test Results</th>
+                  <th scope="col">Action</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr *ngFor="let row of userData">
+                  <td>{{row.id}}</td>
+                  <td>{{row.firstName}}</td>
+                  <td>{{row.lastName}}</td>
+                  <td>{{row.email}}</td>
+                  <td>{{row.mobile}}</td>
+                  <td>{{row.testResults}}</td>
+                  <td>
+                  <button type="button" (click)="onEdit(row)" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#exampleModal">Edit</button>
+                  <button (click)="deleteTheUser(row)" class="btn btn-danger mx-3">Delete</button>
+                  </td>
+              </tr>
+          </tbody>
+      </table>
       </div>
     </div>
   </div>
- 
+
+
+    <div class="modal" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-md">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Add User</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+  
+            <form [formGroup]="formValue">
+  
+              <div class="mb-3">
+                <!-- <label for="exampleInputEmail1" class="form-label">First Name</label> -->
+                <input type="text" formControlName="firstName" placeholder="First Name" class="form-control" id="exampleInputEmail1">
+              </div>
+              <div class="mb-3">
+                <!-- <label for="exampleInputEmail1" class="form-label">Last Name</label> -->
+                <input type="text" formControlName="lastName" placeholder="Last Name" class="form-control" id="exampleInputEmail1">
+              </div>
+              <div class="mb-3">
+                <!-- <label for="exampleInputEmail1" class="form-label">Email address</label> -->
+                <input type="email" formControlName="email" placeholder="email address" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                  </div>
+              <div class="mb-3">
+                <!-- <label for="exampleInputEmail1" class="form-label">Mobile Number</label> -->
+                <input type="text" formControlName="mobile" placeholder="Mobile Number" class="form-control" id="exampleInputEmail1">
+              </div>
+              <div class="mb-3">
+                <!-- <label for="exampleInputEmail1" class="form-label">Test Results</label> -->
+                <input type="text" formControlName="testResults" placeholder="Test Result" class="form-control" id="exampleInputEmail1">
+              </div>
+  
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" id="cancel" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" *ngIf="showAdd" (click)="postUserDetails()" class="btn btn-primary">Add</button>
+            <button type="button" *ngIf="showUpdate" (click)="updateUser()" class="btn btn-primary">Update</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </section>
+  <app-footer>  </app-footer>

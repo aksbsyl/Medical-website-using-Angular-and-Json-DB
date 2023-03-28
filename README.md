@@ -63,8 +63,6 @@ To compile and open: ng serve –open
 And add under imports: MatToolbarModule
 
 Source: https://material.angular.io/components/toolbar/api
-6.	Install tailwindcss:
-![image](https://user-images.githubusercontent.com/50483193/228383422-d91f569b-d147-4f94-a6e3-294931b05e01.png)
 
 7. Add to angular.json
 "styles": [
